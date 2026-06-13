@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GUSTO | College Innovation Bootcamp 2026</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ─── NAVBAR ─── -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="brand-g">G</span>USTO
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <!-- 🎓 STUDENT CHALLENGE: Try toggling this button off by changing data-visible="true" to "false" -->
+      <button id="registerBtn" class="btn-primary" data-visible="true">Register Now</button>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <div class="hero-bg-shape shape-1"></div>
+    <div class="hero-bg-shape shape-2"></div>
+    <div class="hero-content">
+      <span class="hero-badge">🚀 AWS Cloud Workshop 2026</span>
+      <!-- 🎓 STUDENT CHALLENGE: Change the headline text below -->
+      <h1 class="hero-title">
+        Build &amp; Deploy<br />
+        <span class="gradient-text">The Future</span><br />
+        on AWS Cloud
+      </h1>
+      <p class="hero-subtitle">
+        Learn how to host a real website on Amazon S3 using Terraform —<br />
+        infrastructure as code, from your laptop to the cloud.
+      </p>
+      <div class="hero-actions">
+        <a href="#schedule" class="btn-primary btn-large">View Schedule</a>
+        <!-- 🎓 STUDENT CHALLENGE: Change button color using the data-color attribute (blue / green / red / purple) -->
+        <button id="demoBtn" class="btn-outline btn-large" data-color="blue" onclick="launchDemo()">
+          ▶ Live Demo
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number" id="studentCount">0</span>
+          <span class="stat-label">Students</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Days</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Hands-on</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="cloud-card">
+        <div class="cloud-card-header">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="cloud-card-title">terraform apply</span>
+        </div>
+        <pre class="cloud-card-body"><span class="tf-green">aws_s3_bucket</span>.<span class="tf-yellow">gusto_site</span>: Creating...
+aws_s3_bucket.<span class="tf-yellow">gusto_site</span>: Creation complete
+
+<span class="tf-green">Apply complete!</span> Resources: 4 added.
+
+<span class="tf-blue">Outputs:</span>
+website_url = <span class="tf-yellow">"http://gusto-site.s3-website..."</span></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─── -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">What You Will Learn</h2>
+      <p class="section-subtitle">
+        From zero to a publicly accessible website — entirely through code.
+      </p>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">☁️</div>
+          <h3>AWS S3 Hosting</h3>
+          <p>Configure an S3 bucket as a static website host with public access policies.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏗️</div>
+          <h3>Terraform IaC</h3>
+          <p>Provision cloud infrastructure using code — repeatable, version-controlled, and fast.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔐</div>
+          <h3>IAM &amp; AWS CLI</h3>
+          <p>Set up secure credentials and authenticate your local machine with AWS.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌐</div>
+          <h3>HTML / CSS / JS</h3>
+          <p>Modify a real website and watch your changes go live on the internet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SCHEDULE ─── -->
+  <section class="section section-alt" id="schedule">
+    <div class="container">
+      <h2 class="section-title">Workshop Schedule</h2>
+      <!-- 🎓 STUDENT CHALLENGE: Change a session name or time below -->
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-time">Day 1 · 09:00 AM</span>
+            <h3>Environment Setup</h3>
+            <p>Install Terraform, AWS CLI, and configure your IAM credentials.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-time">Day 1 · 02:00 PM</span>
+            <h3>Terraform Basics</h3>
+            <p>Write your first <code>.tf</code> file and understand plan → apply workflow.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-time">Day 2 · 09:00 AM</span>
+            <h3>S3 Static Hosting</h3>
+            <p>Provision an S3 bucket, upload the website, and make it public.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-time">Day 2 · 02:00 PM</span>
+            <h3>Live Modifications</h3>
+            <p>Change colors, text, and toggle features — redeploy and see live changes.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-time">Day 3 · All Day</span>
+            <h3>Hackathon &amp; Showcase</h3>
+            <p>Build your own page and present it to the class.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TEAM ─── -->
+  <section class="section" id="team">
+    <div class="container">
+      <h2 class="section-title">Instructors</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="avatar" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">GT</div>
+          <h3>GUSTO Team</h3>
+          <p>Cloud &amp; DevOps Engineers</p>
+          <span class="badge">AWS Certified</span>
+        </div>
+        <div class="team-card">
+          <div class="avatar" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">CS</div>
+          <h3>CS Faculty</h3>
+          <p>Bachelor Program Advisors</p>
+          <span class="badge">Mentor</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA / CONTACT ─── -->
+  <section class="cta-section" id="contact">
+    <div class="container cta-inner">
+      <h2>Ready to Ship Your First Cloud App?</h2>
+      <p>Bring your laptop. We handle the rest.</p>
+      <!-- 🎓 STUDENT CHALLENGE: Change the email address or button text below -->
+      <a href="mailto:bootcamp@gusto.com" class="btn-primary btn-large">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2026 GUSTO College Innovation Bootcamp. All rights reserved.</p>
+      <!-- 🎓 STUDENT CHALLENGE: Change "Version 1.0.0" to track your own version -->
+      <p class="footer-version" id="versionTag">Version 1.0.0</p>
+    </div>
+  </footer>
+
+  <!-- ─── DEMO MODAL ─── -->
+  <div id="demoModal" class="modal hidden">
+    <div class="modal-overlay" onclick="closeDemoModal()"></div>
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeDemoModal()">✕</button>
+      <h2>🎉 Your site is live!</h2>
+      <p>This is what your deployed S3 website looks like. Students — try editing <code>index.html</code> and running <code>terraform apply</code> again.</p>
+      <div class="modal-steps">
+        <div class="modal-step">1. Edit <code>website/index.html</code></div>
+        <div class="modal-step">2. Run <code>terraform apply</code></div>
+        <div class="modal-step">3. Refresh your S3 URL 🚀</div>
+      </div>
+      <button class="btn-primary" onclick="closeDemoModal()">Got it!</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

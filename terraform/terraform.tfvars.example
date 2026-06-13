@@ -1,0 +1,10 @@
+# Copy this file to terraform.tfvars and fill in your own values
+# cp terraform.tfvars.example terraform.tfvars
+
+# AWS region — Singapore is closest for most students in Southeast Asia
+aws_region = "ap-southeast-1"
+
+# Your unique bucket name — MUST be globally unique across all of AWS
+# Use a pattern like: gusto-bootcamp-<your-name>-2026
+# Example: gusto-bootcamp-john-doe-2026
+bucket_name = "gusto-bootcamp-YOUR-NAME-2026"
