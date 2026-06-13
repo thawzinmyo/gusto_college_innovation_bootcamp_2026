@@ -4,8 +4,12 @@ variable "aws_region" {
   default     = "ap-southeast-1"
 }
 
-variable "bucket_name" {
-  description = "Globally unique S3 bucket name (lowercase letters, numbers, and hyphens only)"
-  type        = string
-  # Each student must set a unique name — no two S3 buckets in the world can share the same name
+variable "bucket_base_name" {
+  description = <<-EOT
+    Short base name for your S3 bucket (lowercase letters, numbers, hyphens only).
+    AWS will scope it to your account + region automatically — no need for a
+    globally unique name. Your AWS account ID is appended automatically.
+    Example: "gusto-bootcamp-john"
+  EOT
+  type = string
 }

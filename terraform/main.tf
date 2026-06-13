@@ -1,10 +1,21 @@
+# ─── Account identity (used for account-regional namespace) ────────────────────
+# AWS Mar 2026: bucket names are now scoped to your account + region,
+# so simple names like "gusto-bootcamp-john" are always available to you.
+# We append the account ID to make the name deterministic and collision-free.
+data "aws_caller_identity" "current" {}
+
+locals {
+  # Format: <base-name>--<account-id>  (account-regional namespace convention)
+  full_bucket_name = "${var.bucket_base_name}--${data.aws_caller_identity.current.account_id}"
+}
+
 # ─── S3 Bucket ─────────────────────────────────────────────────────────────────
 resource "aws_s3_bucket" "website" {
-  bucket        = var.bucket_name
+  bucket        = local.full_bucket_name
   force_destroy = true
 
   tags = {
-    Name        = var.bucket_name
+    Name        = local.full_bucket_name
     Project     = "gusto-bootcamp-2026"
     Environment = "workshop"
   }

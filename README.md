@@ -228,12 +228,15 @@ cp terraform.tfvars.example terraform.tfvars
 Open `terraform.tfvars` in any text editor and **replace `YOUR-NAME`** with your own name:
 
 ```hcl
-aws_region  = "ap-southeast-1"
-bucket_name = "gusto-bootcamp-john-doe-2026"   # ← change this!
+aws_region       = "ap-southeast-1"
+bucket_base_name = "gusto-bootcamp-john"   # ← just use your first name!
 ```
 
-> **Important:** S3 bucket names are globally unique across all of AWS.
-> If your name is already taken, add a random number, e.g. `gusto-bootcamp-john-doe-42`.
+> **Good news (AWS March 2026):** S3 bucket names are no longer required to be
+> globally unique. AWS now scopes bucket names to your **account + region**
+> automatically. Terraform appends your AWS Account ID for you, so the actual
+> bucket created will be named something like `gusto-bootcamp-john--123456789012`.
+> Just pick a short, readable name — no random numbers needed.
 
 ---
 
@@ -405,8 +408,10 @@ Type `yes` to confirm. All S3 objects and the bucket will be deleted.
 <details>
 <summary><strong>Error: BucketAlreadyExists</strong></summary>
 
-The bucket name is already taken globally. Open `terraform.tfvars` and pick a
-more unique name, then run `terraform apply` again.
+This is rare with account regional namespaces (AWS Mar 2026), but can happen
+if the exact same `bucket_base_name` was already used in this account. Open
+`terraform.tfvars`, change `bucket_base_name` to a slightly different value,
+and run `terraform apply` again.
 
 </details>
 

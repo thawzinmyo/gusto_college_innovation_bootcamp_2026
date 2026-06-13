@@ -4,7 +4,7 @@ output "website_url" {
 }
 
 output "bucket_name" {
-  description = "Name of the created S3 bucket"
+  description = "Full name of the created S3 bucket (base name + account ID suffix)"
   value       = aws_s3_bucket.website.id
 }
 

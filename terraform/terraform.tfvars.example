@@ -4,7 +4,7 @@
 # AWS region — Singapore is closest for most students in Southeast Asia
 aws_region = "ap-southeast-1"
 
-# Your unique bucket name — MUST be globally unique across all of AWS
-# Use a pattern like: gusto-bootcamp-<your-name>-2026
-# Example: gusto-bootcamp-john-doe-2026
-bucket_name = "gusto-bootcamp-YOUR-NAME-2026"
+# Short base name for your bucket — just use your own name, no uniqueness tricks needed!
+# AWS (Mar 2026) now scopes bucket names to your account + region automatically.
+# Terraform appends your Account ID, e.g. "gusto-bootcamp-john--123456789012"
+bucket_base_name = "gusto-bootcamp-YOUR-NAME"
