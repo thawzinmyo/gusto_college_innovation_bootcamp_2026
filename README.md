@@ -1,8 +1,6 @@
 # GUSTO College Innovation Bootcamp 2026
 ### Host a Static Website on AWS S3 with Terraform
 
-> **Duration:** 3 days · **Level:** Beginner–Intermediate · **Prerequisites:** None
-
 This hands-on workshop walks you through every step — from installing tools on your
 laptop to deploying a real, publicly-accessible website on Amazon S3 using
 Terraform (Infrastructure as Code).
