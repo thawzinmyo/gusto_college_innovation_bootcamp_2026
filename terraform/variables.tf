@@ -11,5 +11,5 @@ variable "bucket_base_name" {
     globally unique name. Your AWS account ID is appended automatically.
     Example: "gusto-bootcamp-john"
   EOT
-  type = string
+  type        = string
 }
